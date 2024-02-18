@@ -39,20 +39,27 @@ for(const seatName of seatNames){
     }) 
 }
 
-const inputValue = document.getElementById('input-value');
 const cuponApply = document.getElementById('apply');
-grandTotal = document.getElementById('grand-total').innerText;
-
 cuponApply.addEventListener('click',function(){
+    const inputValue = document.getElementById('input-value');
     const inputCupon = inputValue.value;
+
     if(inputCupon === "NEW15"){
-        console.log("You got 15% discount!")
-       
+        const grandTotal = document.getElementById('grand-total');
+        const convertedGrandTotal = parseInt(grandTotal.innerText);
+        grandTotal.innerText =convertedGrandTotal - convertedGrandTotal * 0.15;
+        inputValue.classList.add('hidden');
+        cuponApply.classList.add('hidden');
+
     }else if(inputCupon === "Couple 20"){
-        console.log("You got 20% discount!!!")
+        const grandTotal = document.getElementById('grand-total');
+        const convertedGrandTotal = parseInt(grandTotal.innerText);
+        grandTotal.innerText =convertedGrandTotal - convertedGrandTotal * 0.2;
+        inputValue.classList.add('hidden');
+        cuponApply.classList.add('hidden');
     }
     else{
-        console.log("sorry you dont get any discount")
+        alert("Please give the discount code");
     }
 })
 
