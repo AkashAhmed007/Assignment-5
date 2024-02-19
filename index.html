@@ -270,11 +270,24 @@
                             <button class="btn px-8 seat-name">I4</button>
                         </div>
                     </div>
-                </div>    
+                </div> 
+                <div class="flex justify-start items-center gap-8 w-full m-4">
+                    <p>J</p>
+                    <div class="flex justify-between space-x-2 w-full">
+                        <div>
+                            <button class="btn px-8 seat-name">J1</button>
+                            <button class="btn px-8 seat-name">J2</button>
+                        </div>
+                        <div>
+                            <button class="btn px-8 seat-name">J3</button>
+                            <button class="btn px-8 seat-name">J4</button>
+                        </div>
+                    </div>
+                </div>      
             </div>
     <!--Select your seat section righttside  -->
             <div class="p-5">
-                <p class="text-2xl font-bold m-4">Select your seat</p>
+                <p id="show-seat" class="text-2xl font-bold m-4">Select your seat</p>
                 <hr>
                 <div class="bg-[#f7f8f8] my-4 p-3">
                     <div class="overflow-x-auto">
@@ -294,17 +307,17 @@
                     <hr>
                     <div class="mb-4">
                         <div class="flex justify-between m-5">
-                            <p>Total Price</p>
-                            <p id="total-price" class="pr-10">0</p>
+                            <p class="font-bold">Total Price:</p>
+                            <p id="total-price" class="pr-12">0</p>
                             
                         </div>
-                        <div class="w-full ml-12">
-                            <input class="px-4 py-3 border-2 rounded-xl w-1/2" type="text" id="input-value" placeholder="Have any Coupon?">
-                            <button id="apply" class="btn bg-green-500">Apply</button>
+                        <div class="w-full">
+                            <input type="text" placeholder="Have any Coupon?" class="input input-bordered input-accent w-full max-w-xs font-bold" id="input-value" disabled="disabled"/>
+                            <button id="apply" class="btn btn-success">Apply</button>
                         </div>
                           <div class="flex justify-between m-5">
-                            <p class="">Grand Total</p>
-                            <p id="grand-total" class=" pr-10">0</p>  
+                            <p id="discount" class="font-bold">Grand Total without discount:</p>
+                            <p id="grand-total" class=" pr-12">0</p>  
                         </div>
                     </div>
                 </div>
@@ -317,9 +330,9 @@
                     <input type="text" placeholder="Enter your Email Id" class="input input-bordered w-full max-w-xs mt-4 mb-3"/> 
                 </div>
                 <button id="next-btn" class="btn btn-wide w-full max-w-xs bg-green-600 text-white">Next</button>
-                <div class="flex justify-between items-center max-w-xs">
-                    <a href="">Terms & conditions</a>
-                    <a href="">Cancellation Policy</a>
+                <div class="flex justify-between items-center max-w-xs my-4">
+                    <a href="#">Terms & conditions</a>
+                    <a href="#">Cancellation Policy</a>
                 </div>
         </div>         
     </div>
