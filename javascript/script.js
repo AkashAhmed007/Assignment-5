@@ -63,3 +63,24 @@ cuponApply.addEventListener('click',function(){
     }
 })
 
+const nextBtn = document.getElementById("next-btn");
+const modal =document.getElementById('modal');
+const continueBtn = document.getElementById('continue-btn');
+const header = document.getElementById('header');
+const main = document.getElementById('main');
+const footer = document.getElementById('footer');
+
+nextBtn.addEventListener('click',function(){
+    modal.classList.remove('hidden');
+    header.classList.add('hidden');
+    main.classList.add('hidden');
+    footer.classList.add('hidden');
+
+
+})
+continueBtn.addEventListener('click', function(){
+    modal.classList.add('hidden');
+    header.classList.remove('hidden');
+    main.classList.remove('hidden');
+    footer.classList.remove('hidden');
+})
