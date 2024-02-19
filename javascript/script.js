@@ -13,6 +13,7 @@ for(const seatName of seatNames){
         const selectedSeat = document.getElementById('seat-selected');
         selectedSeat.classList.add('bg-[#1dd100]','p-1','border-1','rounded-xl');
         selectedSeat.innerText = seatSelected;
+
         if(parseInt(seatSelected) === 4){
             document.getElementById('input-value').disabled = false;
         }
@@ -22,33 +23,35 @@ for(const seatName of seatNames){
                 showSeat.innerText = 'You can buy maximum 4 tickets';
                 seatName.classList.add('bg-[#FF0000]');
                 document.getElementById('input-value').disabled = true;
+                tableBody.appendChild('');
             }
         }
 
-        const nameOfSeat = seatName.innerText;
-        const tableBody = document.getElementById('table-body');
-        const tableRow = document.createElement('tr');
-        const tableData1 = document.createElement('td');
-        const tableData2 = document.createElement('td');
-        const tableData3 = document.createElement('td');
+    const nameOfSeat = seatName.innerText;
+    const tableBody = document.getElementById('table-body');
+    const tableRow = document.createElement('tr');
+    const tableData1 = document.createElement('td');
+    const tableData2 = document.createElement('td');
+    const tableData3 = document.createElement('td');
 
-        tableData1.innerText = nameOfSeat;
-        tableData2.innerText = 'Economy';
-        tableData3.innerText = price;
+    tableData1.innerText = nameOfSeat;
+    tableData2.innerText = 'Economy';
+    tableData3.innerText = price;
 
-        tableRow.append(tableData1);
-        tableRow.append(tableData2);
-        tableRow.append(tableData3);
-        tableBody.appendChild(tableRow);
+    tableRow.append(tableData1);
+    tableRow.append(tableData2);
+    tableRow.append(tableData3);
+    tableBody.appendChild(tableRow);
 
-        const totalPrice = document.getElementById('total-price');
-        const convertedTotalPrice = parseInt(totalPrice.innerText);
-        totalPrice.innerText = convertedTotalPrice + price
-        const grandTotal = document.getElementById('grand-total');
-        const convertedGrandTotal = parseInt(grandTotal.innerText);
-        grandTotal.innerText = convertedGrandTotal + price;
+    const totalPrice = document.getElementById('total-price');
+    const convertedTotalPrice = parseInt(totalPrice.innerText);
+    totalPrice.innerText = convertedTotalPrice + price
+    const grandTotal = document.getElementById('grand-total');
+    const convertedGrandTotal = parseInt(grandTotal.innerText);
+    grandTotal.innerText = convertedGrandTotal + price;
     }) 
 }
+
 
 const cuponApply = document.getElementById('apply');
 cuponApply.addEventListener('click',function(){
