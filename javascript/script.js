@@ -5,28 +5,26 @@ let price = 550;
 let grandTotal = 0;
 for(const seatName of seatNames){
     seatName.addEventListener('click',function(){
-        seatName.classList.add('bg-[#1dd100]');
-        count -= 1;
-        document.getElementById('seats-left').innerText = count;
-        seatSelected += 1;
+    seatName.classList.add('bg-[#1dd100]');
+    count -= 1;
+    document.getElementById('seats-left').innerText = count;
+    seatSelected += 1;
+    const selectedSeat = document.getElementById('seat-selected');
+    selectedSeat.classList.add('bg-[#1dd100]','p-1','border-1','rounded-xl');
+    selectedSeat.innerText = seatSelected;
 
-        const selectedSeat = document.getElementById('seat-selected');
-        selectedSeat.classList.add('bg-[#1dd100]','p-1','border-1','rounded-xl');
-        selectedSeat.innerText = seatSelected;
-
-        if(parseInt(seatSelected) === 4){
-            document.getElementById('input-value').disabled = false;
+    if(parseInt(seatSelected) === 4){
+        document.getElementById('input-value').disabled = false;
+    }
+    else{
+        if(parseInt(seatSelected) > 4){
+            const showSeat = document.getElementById('show-seat');
+            showSeat.innerText = 'You can buy maximum 4 tickets';
+            seatName.classList.add('bg-[#FF0000]');
+            document.getElementById('input-value').disabled = true;
+            tableBody.appendChild('');
         }
-        else{
-            if(parseInt(seatSelected) > 4){
-                const showSeat = document.getElementById('show-seat');
-                showSeat.innerText = 'You can buy maximum 4 tickets';
-                seatName.classList.add('bg-[#FF0000]');
-                document.getElementById('input-value').disabled = true;
-                tableBody.appendChild('');
-            }
-        }
-
+    }   
     const nameOfSeat = seatName.innerText;
     const tableBody = document.getElementById('table-body');
     const tableRow = document.createElement('tr');
@@ -51,8 +49,6 @@ for(const seatName of seatNames){
     grandTotal.innerText = convertedGrandTotal + price;
     }) 
 }
-
-
 const cuponApply = document.getElementById('apply');
 cuponApply.addEventListener('click',function(){
     const inputValue = document.getElementById('input-value');
